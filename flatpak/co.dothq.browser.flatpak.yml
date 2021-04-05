@@ -1,0 +1,20 @@
+app-id: co.dothq.browser.flatpak
+runtime: org.freedesktop.Platform
+runtime-version: "19.08"
+sdk: org.freedesktop.Sdk
+command: dot-browser.sh
+modules:
+  - name: dot-browser
+    buildsystem: simple
+    build-commands:
+      - ls
+      - install -d /app/bin
+      - cp -r * /app/bin
+      - chmod +x /app/bin/dot-browser.sh
+      # - install -v -D dot-browser/*.ini /var/lib
+      # - install -D dot-browser.sh /app/bin/dot-browser.sh
+    sources:
+      - type: dir
+        path: dot-browser/
+      - type: file
+        path: dot-browser.sh
