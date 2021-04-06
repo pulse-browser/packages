@@ -3,6 +3,7 @@ runtime: org.gnome.Platform
 runtime-version: "3.38"
 sdk: org.gnome.Sdk
 command: dot-browser.sh
+# rename-desktop-file: co.dothq.browser.flatpak.desktop
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -33,13 +34,28 @@ modules:
   - name: dot-browser
     buildsystem: simple
     build-commands:
+      # Create folder
       - install -d /app/bin
-      - cp -r * /app/bin
+      - install -d /app/share/applications/
+      # Copy files
+      - cp -r bin/* /app/bin
+      - cp -r dot-browser.sh /app/bin
+      # Set up freedesktop stuff
+      - cp co.dothq.browser.flatpak.desktop /app/share/applications/
+      - ./icons.sh
+      # Change execution permissions
       - chmod +x /app/bin/dot-browser.sh
-      # - install -v -D dot-browser/*.ini /var/lib
-      # - install -D dot-browser.sh /app/bin/dot-browser.sh
     sources:
       - type: dir
         path: dot-browser/
+        dest: "bin"
       - type: file
         path: dot-browser.sh
+      - type: file
+        path: icons.sh
+      - type: file
+        path: co.dothq.browser.flatpak.desktop
+      - type: git
+        branch: nightly
+        url: https://github.com/dothq/browser-desktop.git
+        dest: src
