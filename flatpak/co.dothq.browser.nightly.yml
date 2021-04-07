@@ -1,9 +1,8 @@
-app-id: co.dothq.browser.flatpak
+app-id: co.dothq.browser.nightly
 runtime: org.gnome.Platform
 runtime-version: "3.38"
 sdk: org.gnome.Sdk
-command: dot-browser.sh
-# rename-desktop-file: co.dothq.browser.flatpak.desktop
+command: dot
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -39,22 +38,21 @@ modules:
       - install -d /app/share/applications/
       # Copy files
       - cp -r bin/* /app/bin
-      - cp -r dot-browser.sh /app/bin
       # Set up freedesktop stuff
-      - cp co.dothq.browser.flatpak.desktop /app/share/applications/
+      - cp co.dothq.browser.nightly.desktop /app/share/applications/
       - ./icons.sh
-      # Change execution permissions
-      - chmod +x /app/bin/dot-browser.sh
     sources:
-      - type: dir
-        path: dot-browser/
-        dest: "bin"
-      - type: file
-        path: dot-browser.sh
+      # Precompiled binaries
+      - type: archive
+        path: ./dot-87.0.tar.bz2
+        dest: bin
+        # Icon setup files
       - type: file
         path: icons.sh
+        # Desktop files
       - type: file
-        path: co.dothq.browser.flatpak.desktop
+        path: co.dothq.browser.nightly.desktop
+        # Git for up tp date icons
       - type: git
         branch: nightly
         url: https://github.com/dothq/browser-desktop.git
