@@ -21,22 +21,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Add gnome platform and sdk stuff
-        run: flatpak install org.gnome.Platform//3.38 org.gnome.SDK//3.38
-
       - name: Download binaries
         run: |
           cd flatpak
           node download.js
 
-      - name: Build flatpak
-        run: |
-          cd flatpak
-          flatpak-builder --user --install --force-clean build-dir co.dothq.browser.nightly.yml
+      - uses: bilelmoussaoui/flatpak-github-actions@v2
+        with:
+          bundle: 'dot-nightly.flatpak'
+          manifest-path: './flatpak/co.dothq.browser.nightly.yml'
 
       - uses: actions/upload-artifact@v2
         with:
           name: flatpak
-          path: |
-            flatpak/build-dir/
+          path: dot-nightly.flatpak
