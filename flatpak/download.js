@@ -46,7 +46,7 @@ function downloadToString(url) {
     const asset = releases.assets[i]
     if (asset.name.includes('tar.bz2')) {
       console.log(asset.browser_download_url)
-      execSync(`wget ${asset.browser_download_url} -O dot.tar.bz2`)
+      execSync(`curl ${asset.browser_download_url} -o dot.tar.bz2`)
     }
   }
 })()
