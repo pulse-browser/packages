@@ -1,6 +1,6 @@
 app-id: co.dothq.browser.nightly
 runtime: org.gnome.Platform
-runtime-version: "3.38"
+runtime-version: '3.38'
 sdk: org.gnome.Sdk
 command: dot
 finish-args:
@@ -44,7 +44,7 @@ modules:
     sources:
       # Precompiled binaries
       - type: archive
-        path: ./dot-87.0.tar.bz2
+        path: ./dot.tar.bz2
         dest: bin
         # Icon setup files
       - type: file
