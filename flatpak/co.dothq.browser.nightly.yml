@@ -44,8 +44,8 @@ modules:
       - ./icons.sh
     sources:
       # Precompiled binaries
-      - type: archive
-        path: ./dot.tar.bz2
+      - type: dir
+        path: ./dot
         dest: bin
         # Icon setup files
       - type: file
