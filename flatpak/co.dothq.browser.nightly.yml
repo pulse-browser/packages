@@ -40,6 +40,7 @@ modules:
       - cp -r bin/* /app/bin
       # Set up freedesktop stuff
       - cp co.dothq.browser.nightly.desktop /app/share/applications/
+      - cp co.dothq.browser.nightly.metainfo.xml /app/share/applications/
       - ./icons.sh
     sources:
       # Precompiled binaries
@@ -52,6 +53,8 @@ modules:
         # Desktop files
       - type: file
         path: co.dothq.browser.nightly.desktop
+      - type: file
+        path: co.dothq.browser.nightly.metainfo.xml
         # Git for up tp date icons
       - type: git
         branch: nightly

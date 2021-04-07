@@ -1,5 +1,6 @@
 const { get } = require('https')
 const { createWriteStream } = require('fs')
+const { execSync } = require('child_process')
 
 function download(url, dest) {
   return new Promise((resolve, reject) => {
@@ -44,8 +45,8 @@ function downloadToString(url) {
   for (let i = 0; i < releases.assets.length; i++) {
     const asset = releases.assets[i]
     if (asset.name.includes('tar.bz2')) {
-      console.log(asset.name)
-      await download(asset.browser_download_url, 'dot.tar.bz2')
+      console.log(asset.browser_download_url)
+      execSync(`wget ${asset.browser_download_url} -O dot.tar.bz2`)
     }
   }
 })()
