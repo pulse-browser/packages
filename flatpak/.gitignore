@@ -1,0 +1,5 @@
+dot.tar.bz2*
+build-dir/
+.flatpak-builder/
+dot-browser/
+dot/

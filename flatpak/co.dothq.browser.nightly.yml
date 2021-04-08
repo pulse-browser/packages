@@ -1,0 +1,62 @@
+app-id: co.dothq.browser.nightly
+runtime: org.gnome.Platform
+runtime-version: '3.38'
+sdk: org.gnome.Sdk
+command: dot
+finish-args:
+  # X11 + XShm access
+  - --share=ipc
+  - --socket=x11
+  # Wayland access
+  - --socket=wayland
+  # Needs to talk to the network:
+  - --share=network
+  # Full filesystem access
+  - --filesystem=home:rw
+  # Pulse audio
+  - --socket=pulseaudio
+  # Enable dri
+  - --device=dri
+  # Theme support
+  - --filesystem=~/.config/dconf:ro
+  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+  # Session bus for fire manager
+  - --socket=session-bus
+  # Native notifications
+  - --talk-name=org.freedesktop.Notifications
+  # Enable kerbos support
+  - --filesystem=/run/.heim_org.h5l.kcm-socket
+modules:
+  - shared-modules/gtk2/gtk2.json
+  - shared-modules/python2.7/python-2.7.json
+  - shared-modules/dbus-glib/dbus-glib-0.110.json
+  - name: dot-browser
+    buildsystem: simple
+    build-commands:
+      # Create folder
+      - install -d /app/bin
+      - install -d /app/share/applications/
+      # Copy files
+      - cp -r bin/* /app/bin
+      # Set up freedesktop stuff
+      - cp co.dothq.browser.nightly.desktop /app/share/applications/
+      - cp co.dothq.browser.nightly.metainfo.xml /app/share/applications/
+      - ./icons.sh
+    sources:
+      # Precompiled binaries
+      - type: dir
+        path: ./dot
+        dest: bin
+        # Icon setup files
+      - type: file
+        path: icons.sh
+        # Desktop files
+      - type: file
+        path: co.dothq.browser.nightly.desktop
+      - type: file
+        path: co.dothq.browser.nightly.metainfo.xml
+        # Git for up tp date icons
+      - type: git
+        branch: nightly
+        url: https://github.com/dothq/browser-desktop.git
+        dest: src
