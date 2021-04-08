@@ -35,7 +35,7 @@ jobs:
         run: |
           cd flatpak
           node download.js
-          tar -xf dot-87.0.tar.bz2
+          tar -xf dot.tar.bz2
 
       - uses: bilelmoussaoui/flatpak-github-actions@v2
         with:
