@@ -2,10 +2,10 @@
 pkgname=dot-git
 pkgver=0.1
 pkgrel=0
-pkgdesc="Web Browser"
+pkgdesc="Dot Browser is a privacy-conscious web browser based on Firefox."
 arch=("x86_64")
 url="https://github.com/dothq/browser"
-license=('MPL3')
+license=('MPL-2.0')
 depends=()
 makedepends=('yarn' 'nodejs' 'git' 'sccache' 'cbindgen')
 
