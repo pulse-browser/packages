@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] ; then
+    update-alternatives --install /usr/bin/dotbrowser \
+        dotbrowser /usr/bin/dot 70 
+# Add --slave /usr/share/man/man1/dotbrowser.1.gz \
+# dotbrowser.1.gz /usr/share/man/man1/dot.1.gz        
+# to add manfiles
+    update-alternatives --install /usr/bin/dot-browser \
+        dot-browser /usr/bin/dot 70
+fi
+
+if [ "$1" = "configure" ] ; then
+    rm -rf /usr/lib/dot/updates
+fi
+
+

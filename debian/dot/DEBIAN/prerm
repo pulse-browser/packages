@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ] ; then
+    update-alternatives --remove dotbrowser /usr/bin/dot
+    update-alternatives --remove dot-browser /usr/bin/dot
+fi
+
+if [ "$1" = "remove" ]; then
+    rm -rf /usr/lib/dot/updates
+fi
+
+
