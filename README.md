@@ -7,3 +7,4 @@ Welcome to the official repository of Dot Browser packages on Linux.
 * [Arch Linux](arch)
 * [Debian-based](debian)
 * [RPM-based](rpm)
+* [Flatpak](flatpak)
