@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+  schedule:
+    - cron: '37 7 * * Fri'
+
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update files
+        run: |
+          ./shared/update.sh
+      - name: Upload changes...
+        uses: EndBug/add-and-commit@v6
+        with:
+          author_email: dothq-robot@users.noreply.github.com
+          author_name: dothq-robot
+          message: '🍱 Update shared assets'
