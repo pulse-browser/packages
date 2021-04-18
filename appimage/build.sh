@@ -14,6 +14,12 @@ fi
 if [ ! -d dot/ ]; then
     echo "Extracting binary"
     tar -xvf dot.tar.bz2 > /dev/null
+
+    # Copy in the distro files
+    mkdir -p dot/distribution
+
+    cp policies.json dot/distribution/policies.json
+    cp distribution.ini dot/distribution/distribution.ini
 fi
 
 
