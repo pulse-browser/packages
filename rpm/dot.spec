@@ -1,8 +1,5 @@
 %define FirefoxVersion 87.0
 %define GitBranch nightly
-%define ORANGE \033[1;33m
-%define BLUE \033[1;34m
-%define NC \033[0m
 
 Name:           dot
 Version:        0.1
@@ -11,8 +8,8 @@ Summary:        Dot Browser is a privacy-conscious web browser based on Firefox.
 
 License:        MPL-2.0
 URL:            https://github.com/dothq/browser-desktop
-Source0:        https://github.com/dothq/browser-desktop/archive/refs/heads/browser-desktop-%{GitBranch}.tar.gz
-Source1:        https://archive.mozilla.org/pub/firefox/releases/%{FirefoxVersion}/source/firefox-%{FirefoxVersion}.source.tar.xz
+Source0:        https://github.com/dothq/browser-desktop/releases/latest/download/%{name}-%{FirefoxVersion}.source.tar.xz
+Source1:        dot.desktop
 
 BuildRequires:  zip
 BuildRequires:  bzip2-devel
@@ -27,44 +24,52 @@ BuildRequires:  pipewire-devel
 BuildRequires:  nodejs
 BuildRequires:  nasm >= 1.13
 BuildRequires:  libappstream-glib
+BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  pkgconfig(pango)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  libXt-devel     
 
-Requires:       
-
-BuildArch:      x86_64
+ExclusiveArch:  x86_64
 
 %description
 Dot Browser is a privacy-conscious web browser based on Firefox.
 
 %prep
-%autosetup -n browser-desktop-%{GitBranch}
-%autosetup -b 1 -n firefox-%{FirefoxVersion}
 
-cd ..
+# Verify certain build requirements (that aren't installed through the package manager) exist
+if ! command -v rustc &> /dev/null
+then
+    echo -e "rust is not installed, please make sure to install it"
+    %exit
+fi
+if ! command -v cbindgen &> /dev/null
+then
+    echo -e "cbindgen is not installed, please make sure to install it"
+    %exit
+fi
 
-echo -e "%{ORANGE}WARNING%{NC} You are compiling Dot from source! This will take up to an hour depending on your hardware."
-echo -e "%{BLUE}INFO%{NC} You should install \`dot-bin\` if you do not want to compile from source."
+echo -e "WARNING You are compiling Dot from source! This will take up to an hour depending on your hardware."
+echo -e "INFO You should install \`dot-bin\` if you do not want to compile from source."
 
-git init
-git config core.autocrlf false
-git checkout --orphan ff
-git add . -v > /dev/null
-git commit -am "Firefox" > /dev/null
-git checkout -b dot
-    
-mv ../firefox-%{FirefoxVersion} src
+%autosetup -n src
 
 
 %build
 
 export MACH_USE_SYSTEM_PYTHON=true
-./melon import --minimal
-./melon build
-./melon package
-
+./mach build
+./mach package
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%make_install
+
+DESTDIR=%{buildroot} make -c objdir install
+
+# make applications dir
+mkdir -p %{buildroot}{%{_libdir},%{_bindir},%{_datadir}/applications}
+
+# add dot to OS
+desktop-file-install --dir %{buildroot}%{_datadir}/applications %{SOURCE1}
 
 %files
 %license LICENSE
