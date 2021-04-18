@@ -35,9 +35,11 @@ modules:
     build-commands:
       # Create folder
       - install -d /app/bin
+      - install -d /app/bin/distribution
       - install -d /app/share/applications/
       # Copy files
       - cp -r bin/* /app/bin
+      - cp -r distribution/* /app/bin/distribution
       # Set up freedesktop stuff
       - cp co.dothq.browser.nightly.desktop /app/share/applications/
       - cp co.dothq.browser.nightly.metainfo.xml /app/share/applications/
@@ -47,6 +49,10 @@ modules:
       - type: dir
         path: ./dot
         dest: bin
+        # Distribution configs
+      - type: dir
+        path: ./distribution
+        dest: distribution
         # Icon setup files
       - type: file
         path: icons.sh
