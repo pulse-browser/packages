@@ -1,0 +1,11 @@
+# Outputs
+*.AppImage
+*.zsync
+
+# Asset directories
+appdir/
+icons/
+
+# Precompiled binaries
+dot/
+dot.tar.bz2
