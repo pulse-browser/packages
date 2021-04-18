@@ -1,4 +1,3 @@
-// This file was coppied from shared/scripts. Edit it there instead
 const { get } = require('https')
 const { createWriteStream } = require('fs')
 const { execSync } = require('child_process')

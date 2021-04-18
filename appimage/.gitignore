@@ -1,0 +1,7 @@
+*.AppImage
+dot/
+appdir/
+icons/
+dot.tar.bz2
+dot-browser
+dot-browser.sh.*

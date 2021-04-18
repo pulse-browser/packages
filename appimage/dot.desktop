@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.0
+Name=Dot Browser
+Comment=Browse the World Wide Web
+GenericName=Web Browser
+Keywords=Internet;WWW;Browser;Web;Explorer
+Exec=dot-browser %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=co.dothq.browser
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+StartupNotify=true
+Actions=NewWindow;NewPrivateWindow;
+
+[Desktop Action NewWindow]
+Name=Open a New Window
+Exec=dot-browser -new-window
+
+[Desktop Action NewPrivateWindow]
+Name=Open a New Private Window
+Exec=dot-browser -private-window
