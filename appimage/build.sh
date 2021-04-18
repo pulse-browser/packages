@@ -22,9 +22,8 @@ echo "Copying shared resources"
 cp -r ../shared/icons/appdir ./icons
 
 
-# echo "Compiling execution binary"
-# shc -f dot-browser.sh -o dot-browser
-
+echo "Generating update information"
+export UPDATE_INFORMATION="gh-releases-zsync|dothq|browser-desktop|latest|dot-*x86_64.AppImage.zsync"
 
 
 echo "Setting up libary paths"

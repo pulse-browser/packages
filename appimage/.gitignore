@@ -1,7 +1,11 @@
+# Outputs
 *.AppImage
-dot/
+*.zsync
+
+# Asset directories
 appdir/
 icons/
+
+# Precompiled binaries
+dot/
 dot.tar.bz2
-dot-browser
-dot-browser.sh.*
