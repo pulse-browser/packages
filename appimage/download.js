@@ -38,13 +38,18 @@ function downloadToString(url) {
 }
 
 ;(async () => {
-  const releaseStr = await downloadToString(
-    'https://api.github.com/repos/dothq/browser-desktop/releases/latest'
+  const workflowRuns = JSON.parse(
+    await downloadToString(
+      'https://api.github.com/repos/dothq/browser-desktop/actions/workflows/build.yml/runs'
+    )
   )
-  const releases = JSON.parse(releaseStr)
 
-  for (let i = 0; i < releases.assets.length; i++) {
-    const asset = releases.assets[i]
+  const artifactList = JSON.parse(
+    await downloadToString(`${workflowRuns.workflow_runs[0].url}/artifacts`)
+  )
+
+  for (let i = 0; i < artifactList.artifacts.length; i++) {
+    const asset = artifactList.artifacts[i]
     if (asset.name.includes('tar.bz2')) {
       console.log(asset.browser_download_url)
       execSync(`curl -L ${asset.browser_download_url} -o dot.tar.bz2`)
