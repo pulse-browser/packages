@@ -1,5 +1,6 @@
-dot.tar.bz2*
+focus-browser.tar.bz2*
+focus-browser.linux.tar.bz2*
 build-dir/
 .flatpak-builder/
-dot-browser/
-dot/
+focus-browser/
+focus-build/

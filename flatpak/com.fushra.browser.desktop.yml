@@ -63,6 +63,6 @@ modules:
         path: com.fushra.browser.desktop.metainfo.xml
         # Git for up tp date icons
       - type: git
-        branch: nightly
+        branch: alpha
         url: https://github.com/focus-browser/browser.git
         dest: src
