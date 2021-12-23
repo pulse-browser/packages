@@ -1,11 +1,7 @@
-# Dot Browser for Linux
+# Focus Browser for Linux
 
-Welcome to the official repository of Dot Browser packages on Linux.
+Welcome to the official repository of Focus Browser packages on Linux.
 
 ## Distributions
 
-* [AppImage](appimage)
-* [Arch Linux](arch)
-* [Debian-based](debian)
-* [Flatpak](flatpak)
-* [RPM-based](rpm)
+- [Flatpak](flatpak)
