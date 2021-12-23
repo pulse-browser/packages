@@ -47,7 +47,7 @@ modules:
     sources:
       # Precompiled binaries
       - type: dir
-        path: ./dot
+        path: ./focus-browser
         dest: bin
         # Distribution configs
       - type: dir
