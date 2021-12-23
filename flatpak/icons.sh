@@ -1,5 +1,5 @@
 icon_id="com.fushra.browser.desktop"
-icon_repo_path="config/branding/stable"
+icon_repo_path="configs/branding/stable"
 
 function icon {
   local size="$1x$1"

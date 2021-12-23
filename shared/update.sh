@@ -3,7 +3,7 @@ cd shared
 git clone https://github.com/fushra/browser
 
 icon_id="com.fushra.browser.desktop"
-icon_repo_path="browser/config/branding/stable"
+icon_repo_path="browser/configs/branding/stable"
 
 function icon {
   local size="$1x$1"
