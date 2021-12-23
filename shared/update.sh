@@ -31,4 +31,3 @@ rm -rf browser
 
 # Copy the download script into each folder that requires it
 printf "// This file was copied from shared/scripts. Edit it there instead\n$(<scripts/download.js)" > ../flatpak/download.js
-printf "// This file was copied from shared/scripts. Edit it there instead\n$(<scripts/download.js)" > ../appimage/download.js
