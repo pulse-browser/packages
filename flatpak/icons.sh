@@ -1,5 +1,5 @@
-icon_id="co.dothq.browser.nightly"
-icon_repo_path="src/common/browser/branding/dot"
+icon_id="com.fushra.browser.desktop"
+icon_repo_path="config/branding/stable"
 
 function icon {
   local size="$1x$1"

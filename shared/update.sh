@@ -1,9 +1,9 @@
 cd shared
 
-git clone https://github.com/dothq/browser-desktop
+git clone https://github.com/fushra/browser
 
-icon_id="co.dothq.browser"
-icon_repo_path="browser-desktop/common/browser/branding/dot"
+icon_id="com.fushra.browser.desktop"
+icon_repo_path="browser/config/branding/stable"
 
 function icon {
   local size="$1x$1"
@@ -14,8 +14,8 @@ function icon {
   mkdir -p "icons/hicolor/$size/apps/"
   mkdir -p "icons/appdir/$size/"
   # Download files to the correct dir
-  cp "$icon_repo_path/default$1.png" "icons/hicolor/$size/apps/$icon_id.png"
-  cp "$icon_repo_path/default$1.png" "icons/appdir/$size/$icon_id.png"
+  cp "$icon_repo_path/logo$1.png" "icons/hicolor/$size/apps/$icon_id.png"
+  cp "$icon_repo_path/logo$1.png" "icons/appdir/$size/$icon_id.png"
 }
 
 icon 16
@@ -27,7 +27,7 @@ icon 64
 icon 128
 icon 256
 
-rm -rf browser-desktop
+rm -rf browser
 
 # Copy the download script into each folder that requires it
 printf "// This file was copied from shared/scripts. Edit it there instead\n$(<scripts/download.js)" > ../flatpak/download.js

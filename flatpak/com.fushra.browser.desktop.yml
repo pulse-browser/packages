@@ -1,8 +1,8 @@
-app-id: co.dothq.browser.nightly
+app-id: com.fushra.browser.desktop
 runtime: org.gnome.Platform
 runtime-version: '3.38'
 sdk: org.gnome.Sdk
-command: dot
+command: focus-browser
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -30,7 +30,7 @@ modules:
   - shared-modules/gtk2/gtk2.json
   - shared-modules/python2.7/python-2.7.json
   - shared-modules/dbus-glib/dbus-glib-0.110.json
-  - name: dot-browser
+  - name: focus-browser
     buildsystem: simple
     build-commands:
       # Create folder
@@ -41,8 +41,8 @@ modules:
       - cp -r bin/* /app/bin
       - cp -r distribution/* /app/bin/distribution
       # Set up freedesktop stuff
-      - cp co.dothq.browser.nightly.desktop /app/share/applications/
-      - cp co.dothq.browser.nightly.metainfo.xml /app/share/applications/
+      - cp com.fushra.browser.desktop.desktop /app/share/applications/
+      - cp com.fushra.browser.desktop.metainfo.xml /app/share/applications/
       - ./icons.sh
     sources:
       # Precompiled binaries
@@ -58,11 +58,11 @@ modules:
         path: icons.sh
         # Desktop files
       - type: file
-        path: co.dothq.browser.nightly.desktop
+        path: com.fushra.browser.desktop.desktop
       - type: file
-        path: co.dothq.browser.nightly.metainfo.xml
+        path: com.fushra.browser.desktop.metainfo.xml
         # Git for up tp date icons
       - type: git
         branch: nightly
-        url: https://github.com/dothq/browser-desktop.git
+        url: https://github.com/focus-browser/browser.git
         dest: src
