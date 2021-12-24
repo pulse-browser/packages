@@ -9,8 +9,10 @@ function icon {
   # Initialise dir
   install -d "/app/share/icons/hicolor/$size/apps/"
   # Download files to the correct dir
-  cp "$icon_repo_path/default$1.png" "/app/share/icons/hicolor/$size/apps/$icon_id.png"
+  cp "$icon_repo_path/logo$1.png" "/app/share/icons/hicolor/$size/apps/$icon_id.png"
 }
+
+find .
 
 icon 16
 icon 22
