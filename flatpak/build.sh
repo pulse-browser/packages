@@ -16,4 +16,3 @@ echo "Commiting to the repo"
 cd repo/
 git add .
 git commit -m "📦️ Update alpha flatpak builds"
-git push origin main
