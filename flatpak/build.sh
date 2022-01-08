@@ -2,7 +2,6 @@ echo "Clone the repo..."
 
 # TODO: Create a robot github account and make it responsible for pushing updates to the repo
 rm -rf repo/
-echo "https://trickypr:${deploy_acc_key}@github.com/focus-browser/repo"
 git clone https://trickypr:${deploy_acc_key}@github.com/focus-browser/repo
 mkdir -p repo/flatpak/alpha
 
