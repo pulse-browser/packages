@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop-application">
-  <id>com.fushra.browser.desktop</id>
+<application>
+  <id type="desktop">com.fushra.browser.desktop</id>
 
   <name>Focus Browser</name>
   <summary>Focus Browser is a firefox fork focused on usability improvements, features and privacy improvements.</summary>
@@ -23,4 +23,4 @@
       <image>https://camo.githubusercontent.com/b464eb578ade587c72fffba93655382347c03048619ab28a3f848d6ef1a813a6/68747470733a2f2f692e696d6775722e636f6d2f79785844676d4a2e706e67</image>
     </screenshot>
   </screenshots>
-</component>
+</application>
