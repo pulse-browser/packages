@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
+<component type="desktop-application">
   <id type="desktop">com.fushra.browser.desktop</id>
 
   <name>Focus Browser</name>
-  <summary>Focus Browser is a firefox fork focused on usability improvements, features and privacy improvements.</summary>
+  <summary>Focus Browser is a firefox fork focused on usability improvements, features and privacy improvements</summary>
 
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
@@ -11,10 +11,12 @@
   <description>
     <p>
       Focus Browser contaisn a number of incremental improvements to the Firefox browser. These include:
-       - A smoother and more helpful setup experience
-       - uBlock origin included out of the box to improve performance and elimitate trackers
-       - The removal of Pocket to reduce anoyances and tracking
     </p>
+    <ul>
+      <li>A smoother and more helpful setup experience</li>
+      <li>uBlock origin included out of the box to improve performance and elimitate trackers</li>
+      <li>The removal of Pocket to reduce anoyances and tracking</li>
+    </ul>
   </description>
 
   <launchable type="desktop-id">com.fushra.browser.desktop</launchable>
@@ -23,4 +25,6 @@
       <image>https://camo.githubusercontent.com/b464eb578ade587c72fffba93655382347c03048619ab28a3f848d6ef1a813a6/68747470733a2f2f692e696d6775722e636f6d2f79785844676d4a2e706e67</image>
     </screenshot>
   </screenshots>
-</application>
+
+  <content_rating type="oars-1.0"></content_rating>
+</component>
