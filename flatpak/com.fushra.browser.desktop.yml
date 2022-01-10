@@ -2,7 +2,7 @@ app-id: com.fushra.browser.desktop
 runtime: org.gnome.Platform
 runtime-version: '3.38'
 sdk: org.gnome.Sdk
-command: focus-browser
+command: Lepton-browser
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -30,7 +30,7 @@ modules:
   - shared-modules/gtk2/gtk2.json
   - shared-modules/python2.7/python-2.7.json
   - shared-modules/dbus-glib/dbus-glib-0.110.json
-  - name: focus-browser
+  - name: Lepton-browser
     buildsystem: simple
     build-commands:
       # Create folder
@@ -47,7 +47,7 @@ modules:
     sources:
       # Precompiled binaries
       - type: dir
-        path: ./focus-browser
+        path: ./Lepton-browser
         dest: bin
         # Distribution configs
       - type: dir
@@ -64,5 +64,5 @@ modules:
         # Git for up tp date icons
       - type: git
         branch: alpha
-        url: https://github.com/focus-browser/browser.git
+        url: https://github.com/Lepton-browser/browser.git
         dest: src

@@ -2,15 +2,15 @@
 <component type="desktop-application">
   <id type="desktop">com.fushra.browser.desktop</id>
 
-  <name>Focus Browser</name>
-  <summary>Focus Browser is a firefox fork focused on usability improvements, features and privacy improvements</summary>
+  <name>Lepton Browser</name>
+  <summary>Lepton Browser is a firefox fork Leptoned on usability improvements, features and privacy improvements</summary>
 
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
 
   <description>
     <p>
-      Focus Browser contaisn a number of incremental improvements to the Firefox browser. These include:
+      Lepton Browser contaisn a number of incremental improvements to the Firefox browser. These include:
     </p>
     <ul>
       <li>A smoother and more helpful setup experience</li>

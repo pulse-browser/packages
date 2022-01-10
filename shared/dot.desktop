@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
-Name=Focus Browser
+Name=Lepton Browser
 Comment=Browse the web faster and safer with a browser based on firefox
 GenericName=Web Browser
 Keywords=Internet;WWW;Browser;Web;Explorer
-Exec=focus-browser %u
+Exec=Lepton-browser %u
 Terminal=false
 X-MultipleArgs=false
 Type=Application
@@ -16,8 +16,8 @@ Actions=NewWindow;NewPrivateWindow;
 
 [Desktop Action NewWindow]
 Name=Open a New Window
-Exec=focus-browser -new-window
+Exec=Lepton-browser -new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
-Exec=focus-browser -private-window
+Exec=Lepton-browser -private-window

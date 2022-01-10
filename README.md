@@ -1,6 +1,6 @@
-# Focus Browser for Linux
+# Lepton Browser for Linux
 
-Welcome to the official repository of Focus Browser packages on Linux.
+Welcome to the official repository of Lepton Browser packages on Linux.
 
 ## Distributions
 
