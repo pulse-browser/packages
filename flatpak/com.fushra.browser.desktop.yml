@@ -37,12 +37,13 @@ modules:
       - install -d /app/bin
       - install -d /app/bin/distribution
       - install -d /app/share/applications/
+      - install -d /app/share/metainfo/
       # Copy files
       - cp -r bin/* /app/bin
       - cp -r distribution/* /app/bin/distribution
       # Set up freedesktop stuff
       - cp com.fushra.browser.desktop.desktop /app/share/applications/
-      - cp com.fushra.browser.desktop.metainfo.xml /app/share/applications/
+      - cp com.fushra.browser.desktop.appdata.xml /app/share/metainfo/
       - ./icons.sh
     sources:
       # Precompiled binaries
@@ -60,7 +61,7 @@ modules:
       - type: file
         path: com.fushra.browser.desktop.desktop
       - type: file
-        path: com.fushra.browser.desktop.metainfo.xml
+        path: com.fushra.browser.desktop.appdata.xml
         # Git for up tp date icons
       - type: git
         branch: alpha
