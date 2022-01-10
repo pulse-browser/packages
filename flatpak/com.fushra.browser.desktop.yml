@@ -48,7 +48,7 @@ modules:
     sources:
       # Precompiled binaries
       - type: dir
-        path: ./Lepton-browser
+        path: ./foucs-browser
         dest: bin
         # Distribution configs
       - type: dir
