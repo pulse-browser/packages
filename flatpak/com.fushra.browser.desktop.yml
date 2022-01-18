@@ -2,7 +2,7 @@ app-id: com.fushra.browser.desktop
 runtime: org.gnome.Platform
 runtime-version: '3.38'
 sdk: org.gnome.Sdk
-command: Lepton-browser
+command: pulse-browser
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -48,7 +48,7 @@ modules:
     sources:
       # Precompiled binaries
       - type: dir
-        path: ./foucs-browser
+        path: ./pulse-browser
         dest: bin
         # Distribution configs
       - type: dir
@@ -65,5 +65,5 @@ modules:
         # Git for up tp date icons
       - type: git
         branch: alpha
-        url: https://github.com/Lepton-browser/browser.git
+        url: https://github.com/pulse-browser/browser.git
         dest: src
