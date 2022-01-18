@@ -1,6 +1,6 @@
-# Lepton Browser for Linux
+# Pulse Browser for Linux
 
-Welcome to the official repository of Lepton Browser packages on Linux.
+Welcome to the official repository of Pulse Browser packages on Linux.
 
 ## Distributions
 
