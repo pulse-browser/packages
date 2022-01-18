@@ -9,6 +9,7 @@ echo "Building flatpak for the alpha repo"
 
 rm -rf focus-build
 flatpak-builder --repo=repo/flatpak/alpha/ --gpg-sign=856780A2B7EAC3C2AA34C1DCC210F0A67AAA29F4 ./pulse-build ./com.fushra.browser.desktop.yml
+flatpak build-update-repo repo/flatpak/alpha/
 
 echo "Commiting to the repo"
 
