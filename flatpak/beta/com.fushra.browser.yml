@@ -1,0 +1,69 @@
+app-id: com.fushra.browser.beta
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+# sdk-extensions: ['org.freedesktop.Platform.ffmpeg-full//21.08']
+base: org.mozilla.firefox.BaseApp
+base-version: '21.08'
+command: launch-script.sh
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=x11
+  - --socket=pcsc
+  - --socket=cups
+  - --persist=.pulse-browser
+  - --filesystem=xdg-download:rw
+  - --device=all
+  - --talk-name=org.freedesktop.FileManager1
+  - --system-talk-name=org.freedesktop.NetworkManager
+  - --talk-name=org.a11y.Bus
+  - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.freedesktop.ScreenSaver
+  - --talk-name=org.freedesktop.Notifications
+modules:
+  - name: pulse_browser_beta
+    buildsystem: simple
+    build-commands:
+      - tar -xvf pulse-browser.tar.bz2
+      - mv pulse-browser/ bin/
+
+      - install -d /app/bin
+      - install -d /app/bin/distribution
+      - install -d /app/share/icons
+      - install -d /app/share/metainfo
+      - install -d /app/share/applications
+
+      - cp -r bin/* /app/bin
+      - mv /app/bin/pulse-browser /app/bin/pulse-browser-beta
+      - mv /app/bin/pulse-browser-bin /app/bin/pulse-browser-beta-bin
+      - cp -r icons/* /app/share/icons
+      - cp launch-script.sh /app/bin/launch-script.sh
+      - cp -r policies.json /app/bin/distribution/policies.json
+
+      - cp com.fushra.browser.metainfo.xml /app/share/metainfo/com.fushra.browser.beta.metainfo.xml
+      - cp com.fushra.browser.desktop /app/share/applications/com.fushra.browser.beta.desktop
+
+      - chmod +x /app/bin/launch-script.sh
+    sources:
+      - type: file
+        path: ./pulse-browser.tar.bz2
+
+      - type: file
+        path: ./policies.json
+
+      - type: file
+        path: ./launch-script.sh
+
+      - type: file
+        path: ./com.fushra.browser.metainfo.xml
+      - type: file
+        path: ./com.fushra.browser.desktop
+
+      # TODO: Different icons for each release channel
+      - type: dir
+        path: ../shared/icons/beta
+        dest: icons
