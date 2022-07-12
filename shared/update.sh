@@ -1,33 +1,41 @@
 cd shared
 
-git clone https://github.com/fushra/browser
+git clone https://github.com/pulse-browser/browser
 
-icon_id="com.fushra.browser.desktop"
-icon_repo_path="browser/configs/branding/stable"
+icon_id="com.fushra.browser"
+icon_repo_path="browser/configs/branding"
 
 function icon {
   local size="$1x$1"
+  local brand=$2
+  local append=$3
 
   echo "Icon: $size"
 
   # Initialise dirs
-  mkdir -p "icons/hicolor/$size/apps/"
-  mkdir -p "icons/appdir/$size/"
+  mkdir -p "icons/$brand/hicolor/$size/apps/"
+  mkdir -p "icons/$brand/appdir/$size/"
   # Download files to the correct dir
-  cp "$icon_repo_path/logo$1.png" "icons/hicolor/$size/apps/$icon_id.png"
-  cp "$icon_repo_path/logo$1.png" "icons/appdir/$size/$icon_id.png"
+  cp "$icon_repo_path/$brand/logo$1.png" "icons/$brand/hicolor/$size/apps/$icon_id$append.png"
+  cp "$icon_repo_path/$brand/logo$1.png" "icons/$brand/appdir/$size/$icon_id$append.png"
 }
 
-icon 16
-icon 22
-icon 24
-icon 32
-icon 48
-icon 64
-icon 128
-icon 256
+function branding_icon {
+  local brand=$1
+  local append=$2
+  
+  icon 16 $brand $append
+  icon 22 $brand $append
+  icon 24 $brand $append
+  icon 32 $brand $append
+  icon 48 $brand $append
+  icon 64 $brand $append
+  icon 128 $brand $append
+  icon 256 $brand $append
+}
+
+branding_icon "alpha" ".alpha"
+branding_icon "beta" ".beta"
+branding_icon "stable" ""
 
 rm -rf browser
-
-# Copy the download script into each folder that requires it
-printf "// This file was copied from shared/scripts. Edit it there instead\n$(<scripts/download.js)" > ../flatpak/download.js

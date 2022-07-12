@@ -24,6 +24,6 @@ jobs:
       - name: Upload changes...
         uses: EndBug/add-and-commit@v6
         with:
-          author_email: dothq-robot@users.noreply.github.com
-          author_name: dothq-robot
+          author_email: trickypr@gmail.com
+          author_name: fushra-robot
           message: '🍱 Update shared assets'
