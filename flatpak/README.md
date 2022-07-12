@@ -3,7 +3,7 @@
 ## Install dependencies
 
 ```sh
-flatpak install flathub org.freedesktop.Platform//21.08 org.freedesktop.Sdk//21.08 org.freedesktop.Platform.ffmpeg-full//21.08
+flatpak install flathub org.freedesktop.Platform//21.08 org.freedesktop.Sdk//21.08
 flatpak install flathub org.mozilla.firefox.BaseApp//21.08 # From what I can tell, provides precompiled binaries for a bunch of stuff
 ```
 
