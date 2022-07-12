@@ -1,0 +1,46 @@
+app-id: com.fushra.browser
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+# sdk-extensions: ['org.freedesktop.Platform.ffmpeg-full//21.08']
+base: org.mozilla.firefox.BaseApp
+base-version: '21.08'
+command: launch-script.sh
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=x11
+  - --socket=pcsc
+  - --socket=cups
+  - --persist=.pulse-browser
+  - --filesystem=xdg-download:rw
+  - --device=all
+  - --talk-name=org.freedesktop.FileManager1
+  - --system-talk-name=org.freedesktop.NetworkManager
+  - --talk-name=org.a11y.Bus
+  - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.freedesktop.ScreenSaver
+  - --talk-name=org.freedesktop.Notifications
+modules:
+  - name: pulse_browser
+    buildsystem: simple
+    build-commands:
+      - install -d /app/bin
+      - install -d /app/bin/distribution
+
+      - cp -r bin/* /app/bin
+      - cp launch-script.sh /app/bin/launch-script.sh
+      - cp -r policies.json /app/bin/distribution/policies.json
+
+      - chmod +x /app/bin/launch-script.sh
+    sources:
+      - type: dir
+        path: ./pulse-browser
+        dest: bin
+      - type: file
+        path: ./policies.json
+      - type: file
+        path: ./launch-script.sh
