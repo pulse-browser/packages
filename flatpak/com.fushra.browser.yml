@@ -30,8 +30,10 @@ modules:
     build-commands:
       - install -d /app/bin
       - install -d /app/bin/distribution
+      - install -d /app/share/icons
 
       - cp -r bin/* /app/bin
+      - cp -r icons/* /app/share/icons
       - cp launch-script.sh /app/bin/launch-script.sh
       - cp -r policies.json /app/bin/distribution/policies.json
 
@@ -44,3 +46,7 @@ modules:
         path: ./policies.json
       - type: file
         path: ./launch-script.sh
+      # TODO: Different icons for each release channel
+      - type: dir
+        path: ../shared/icons
+        dest: icons
