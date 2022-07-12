@@ -28,6 +28,9 @@ modules:
   - name: pulse_browser
     buildsystem: simple
     build-commands:
+      - tar -xvf pulse-browser.tar.bz2
+      - mv pulse-browser/ bin/
+
       - install -d /app/bin
       - install -d /app/bin/distribution
       - install -d /app/share/icons
@@ -44,9 +47,8 @@ modules:
 
       - chmod +x /app/bin/launch-script.sh
     sources:
-      - type: dir
-        path: ./pulse-browser
-        dest: bin
+      - type: file
+        path: ./pulse-browser.tar.bz2
 
       - type: file
         path: ./policies.json
