@@ -1,8 +1,0 @@
-focus-browser.tar.bz2*
-focus-browser.linux.tar.bz2*
-build-dir/
-.flatpak-builder/
-focus-browser/
-focus-build/
-alpha/
-repo/
