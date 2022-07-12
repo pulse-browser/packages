@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Pulse Browser
+Comment=The browser with features to meet your need
+Categories=Network;WebBrowser;
+
+Icon=com.fushra.browser.desktop
+Exec=pulse-browser
+Terminal=false
