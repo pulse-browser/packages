@@ -2,7 +2,6 @@ app-id: com.fushra.browser.alpha
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
-# sdk-extensions: ['org.freedesktop.Platform.ffmpeg-full//21.08']
 base: org.mozilla.firefox.BaseApp
 base-version: '21.08'
 command: launch-script.sh
@@ -38,8 +37,6 @@ modules:
       - install -d /app/share/applications
 
       - cp -r bin/* /app/bin
-      # - mv /app/bin/pulse-browser /app/bin/pulse-browser
-      # - mv /app/bin/pulse-browser-bin /app/bin/pulse-browser-bin
       - cp -r icons/* /app/share/icons
       - cp launch-script.sh /app/bin/launch-script.sh
       - cp -r policies.json /app/bin/distribution/policies.json
@@ -63,7 +60,6 @@ modules:
       - type: file
         path: ./com.fushra.browser.desktop
 
-      # TODO: Different icons for each release channel
       - type: dir
         path: ../../shared/icons/alpha/
         dest: icons
