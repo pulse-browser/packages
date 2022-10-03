@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-    <id>com.fushra.browser.</id>
+    <id>com.fushra.browser.alpha</id>
 
-    <name>Pulse Browser</name>
-    <summary>The browser with features to meet your need</summary>
+    <name>Pulse Browser Alpha</name>
+    <summary>The alpha version of the browser with features to meet your need</summary>
 
     <metadata_license>MIT</metadata_license>
     <project_license>MPL-2.0</project_license>
 
     <description>
-        <p>
-      Pulse browser is a gecko based browser with the goal of providing sane defaults, more features, and just the right amount of customization. Out of the box we provide: - A feature rich sidebar - uBlock Origin for tracker blocking - Tabliss for a customizable new tab page
-    </p>
+        <p>Pulse browser is a gecko based browser with the goal of providing sane defaults, more features, and just the right amount of customization. Out of the box we provide:</p>
+
+        <ul>
+            <li>A feature rich sidebar</li>
+            <li>uBlock Origin for tracker blocking</li>
+            <li>Tabliss for a customizable new tab page</li>
+        </ul>
     </description>
 
-    <launchable type="desktop-id">com.fushra.browser..desktop</launchable>
+    <launchable type="desktop-id">com.fushra.browser.alpha.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <image>https://pulsebrowser.app/assets/Welcome.png</image>

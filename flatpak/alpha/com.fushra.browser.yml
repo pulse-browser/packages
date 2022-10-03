@@ -1,4 +1,4 @@
-app-id: com.fushra.browser.
+app-id: com.fushra.browser.alpha
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -25,7 +25,7 @@ finish-args:
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.freedesktop.Notifications
 modules:
-  - name: pulse_browser_
+  - name: pulse_browser
     buildsystem: simple
     build-commands:
       - tar -xvf pulse-browser.tar.bz2
@@ -38,14 +38,14 @@ modules:
       - install -d /app/share/applications
 
       - cp -r bin/* /app/bin
-      - mv /app/bin/pulse-browser /app/bin/pulse-browser-
-      - mv /app/bin/pulse-browser-bin /app/bin/pulse-browser--bin
+      # - mv /app/bin/pulse-browser /app/bin/pulse-browser
+      # - mv /app/bin/pulse-browser-bin /app/bin/pulse-browser-bin
       - cp -r icons/* /app/share/icons
       - cp launch-script.sh /app/bin/launch-script.sh
       - cp -r policies.json /app/bin/distribution/policies.json
 
-      - cp com.fushra.browser.metainfo.xml /app/share/metainfo/com.fushra.browser..metainfo.xml
-      - cp com.fushra.browser.desktop /app/share/applications/com.fushra.browser..desktop
+      - cp com.fushra.browser.metainfo.xml /app/share/metainfo/com.fushra.browser.alpha.metainfo.xml
+      - cp com.fushra.browser.desktop /app/share/applications/com.fushra.browser.alpha.desktop
 
       - chmod +x /app/bin/launch-script.sh
     sources:
@@ -65,5 +65,5 @@ modules:
 
       # TODO: Different icons for each release channel
       - type: dir
-        path: ../shared/icons/
+        path: ../../shared/icons/alpha/
         dest: icons

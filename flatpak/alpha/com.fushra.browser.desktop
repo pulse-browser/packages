@@ -6,6 +6,6 @@ Name=Pulse Browser
 Comment=The browser with features to meet your need
 Categories=Network;WebBrowser;
 
-Icon=com.fushra.browser.desktop.
+Icon=com.fushra.browser.alpha
 Exec=pulse-browser
 Terminal=false

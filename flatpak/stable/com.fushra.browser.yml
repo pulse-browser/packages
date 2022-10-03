@@ -63,5 +63,5 @@ modules:
 
       # TODO: Different icons for each release channel
       - type: dir
-        path: ../shared/icons/stable
+        path: ../../shared/icons/stable
         dest: icons

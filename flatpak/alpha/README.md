@@ -10,7 +10,7 @@ flatpak install flathub org.mozilla.firefox.BaseApp//21.08 # From what I can tel
 ## Download the latest linux artifacts and extract it
 
 ```sh
-wget https://pulsebrowser.app/api/download\?platform\=linux\&channel\= -O pulse-browser.tar.bz2
+wget https://pulsebrowser.app/api/download\?platform\=linux\&channel\=alpha -O pulse-browser.tar.bz2
 ```
 
 ## Building

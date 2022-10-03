@@ -44,8 +44,8 @@ modules:
       - cp launch-script.sh /app/bin/launch-script.sh
       - cp -r policies.json /app/bin/distribution/policies.json
 
-      - cp com.fushra.browser.metainfo.xml /app/share/metainfo/com.fushra.browser.beta.metainfo.xml
-      - cp com.fushra.browser.desktop /app/share/applications/com.fushra.browser.beta.desktop
+      - cp com.fushra.browser.metainfo.xml /app/share/metainfo/com.fushra.browser.metainfo.xml
+      - cp com.fushra.browser.desktop /app/share/applications/com.fushra.browser.desktop
 
       - chmod +x /app/bin/launch-script.sh
     sources:
@@ -65,5 +65,5 @@ modules:
 
       # TODO: Different icons for each release channel
       - type: dir
-        path: ../shared/icons/beta
+        path: ../../shared/icons/beta
         dest: icons
