@@ -9,7 +9,7 @@ category=$1
 
 # Collect the contant paths
 repo=$(realpath ../repo/flatpak)
-gpgKey="64844DAB0FEC1D9CE347CEC09080B1B929B33470"
+gpgKey="DCF4BB7E23E3973FA078FAA06BA8F1D7D3498B2C"
 
 (
   cd "$category"
