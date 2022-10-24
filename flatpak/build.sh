@@ -13,7 +13,7 @@ gpgKey="DCF4BB7E23E3973FA078FAA06BA8F1D7D3498B2C"
 
 (
   cd "$category"
-  rm pulse-browser.tar.bz2
+  rm pulse-browser.tar.bz2 || true # We do not care about failues to delete
   wget https://pulsebrowser.app/api/download\?platform\=linux\&channel\=$category -O pulse-browser.tar.bz2
   flatpak-builder --force-clean build-dir com.fushra.browser.yml
 
