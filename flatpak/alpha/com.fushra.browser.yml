@@ -1,9 +1,9 @@
 app-id: com.fushra.browser.alpha
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 base: org.mozilla.firefox.BaseApp
-base-version: '21.08'
+base-version: '22.08'
 command: launch-script.sh
 finish-args:
   - --share=ipc
