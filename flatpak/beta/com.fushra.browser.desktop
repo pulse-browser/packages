@@ -7,5 +7,5 @@ Comment=The browser with features to meet your need
 Categories=Network;WebBrowser;
 
 Icon=com.fushra.browser.desktop.beta
-Exec=pulse-browser
+Exec=/app/bin/launch-script.sh
 Terminal=false
