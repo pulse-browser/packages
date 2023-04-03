@@ -24,7 +24,7 @@ finish-args:
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.freedesktop.Notifications
-  - --own-name=org.mozilla.pulse_browser
+  - --own-name=org.mozilla.pulse_browser.*
 modules:
   - name: pulse_browser
     buildsystem: simple
