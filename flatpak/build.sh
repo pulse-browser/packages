@@ -13,6 +13,7 @@ gpgKey="68070A3C9B5A79C21B76040AB671946A609089F2"
 
 # Update the (alpha) build's metainfo
 # TODO: This should work for all categories
+npm i
 node ./updateMetainfo.js
 
 (
