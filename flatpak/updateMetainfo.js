@@ -10,7 +10,9 @@ const TEMPLATE_PATH = 'alpha/com.fushra.browser.metainfo.template.xml'
 ;(async () => {
   const changelog = await (await fetch(CHANGELOG_URL)).text()
 
-  const changelogAST = md.parse(changelog)
+  const changelogAST = md.parse(
+    changelog.replace(/\[(?<text>.*?)\]\(.*?\)/gm, '$<text>')
+  )
   /** @type {Record<string, Token[]>} */
   const versionTokens = {}
 
@@ -44,7 +46,7 @@ const TEMPLATE_PATH = 'alpha/com.fushra.browser.metainfo.template.xml'
         version,
       })
       .ele('description')
-      .ele(md.renderer.render(versionTokens[version]))
+      .ele(md.renderer.render(versionTokens[version]).replaceAll('h3', 'p'))
       .up()
       .up()
   }
