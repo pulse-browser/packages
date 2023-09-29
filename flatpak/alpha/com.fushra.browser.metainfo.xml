@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.fushra.browser.alpha</id>
+
+    <name>Pulse Browser Alpha</name>
+    <summary>The alpha version of the browser with features to meet your need</summary>
+
+    <metadata_license>MIT</metadata_license>
+    <project_license>MPL-2.0</project_license>
+
+    <description>
+        <p>Pulse browser is a gecko based browser with the goal of providing sane defaults, more features, and just the right amount of customization. Out of the box we provide:</p>
+
+        <ul>
+            <li>A feature rich sidebar</li>
+            <li>uBlock Origin for tracker blocking</li>
+            <li>Tabliss for a customizable new tab page</li>
+        </ul>
+    </description>
+
+    <launchable type="desktop-id">com.fushra.browser.alpha.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://pulsebrowser.app/assets/Welcome.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://pulsebrowser.app/assets/Sidebar.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://pulsebrowser.app/assets/Sidebar_Light.png</image>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+      <release version="1.0.0-a.83">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Firefox updated to 
+              <code>118.0.1</code>
+            </li>
+            <li>Sidebar tabs no longer persist state on new profiles (can be reenabled in prefs)</li>
+            <li>Assorted URLs now point to more correct / relevant locations</li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Fix fetching new language packs (bug #287)</li>
+            <li>Sidebar starts up on the correct side of the browser (bug #277)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.82">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Update uBlock to 
+              <code>1.52.2</code>
+            </li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Vertical tabs will correctly follow fullscreen state</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.81">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Update Betterfox to 
+              <code>117.0</code>
+            </li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Improve contrast on pulse light and dark themes</li>
+            <li>Assorted UI inconsistencies for vertical tabs</li>
+            <li>Make vertical tabs visible in fullscreen (tested in sway)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.80">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated Gecko to 
+              <code>117.0.1</code>
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.79">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated gecko to 
+              <code>117.0</code>
+            </li>
+            <li>
+              Updated betterfox 
+              <code>116.1</code>
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.78">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated gecko to 
+              <code>116.0.2</code>
+               and all it causes
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.77">
+        <description>
+          <p>Added</p>
+          <ul>
+            <li>Vertical tabs: Open new tab w/ clipboard contents on space middle click</li>
+            <li>The new tab &amp; close tab buttons can now be hidden</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>Vertical tabs: New tab button no longer has text</li>
+            <li>
+              Partial 
+              <code>:has</code>
+               support is enabled (this is intended for userchrome use only)
+            </li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Pinned vertical tabs are no longer positioned. Sorta defeats their purpose, but it stops a semi-major bug</li>
+            <li>Sidebar sites now appear on new windows</li>
+            <li>Vertical tabs: New tab icon is now centered</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.75">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>Clean up vertical tab styles</li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Fix tab movement</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.74">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Update Firefox to 
+              <code>115.0.1</code>
+            </li>
+            <li>Update Betterfox</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.67 through 1.0.0-a.73">
+        <description>
+          <p>Fight with CI.</p>
+        </description>
+      </release>
+      <release version="1.0.0-a.66">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Update Firefox to 
+              <code>114.0.1</code>
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.65">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Update Firefox to 
+              <code>113.0.1</code>
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.64">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Add branding prefs back (#242)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.63">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>uBlock now works in sidebars (#238)</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated Firefox to 
+              <code>112.0</code>
+               (#237)
+            </li>
+            <li>
+              Updated uBlock to 
+              <code>1.48.8</code>
+               (#237)
+            </li>
+            <li>Update BetterFox (#237)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.62">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Specified wayland app name (#231)</li>
+            <li>Migration for disabling sidebar animations (#234)</li>
+            <li>New tab button no longer follows OS style (#233, @surapunoyousei)</li>
+            <li>Fix vertical tab borders on windows (#232, @surapunoyousei)</li>
+            <li>Download URL points to Pulse site (#235)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.61">
+        <description>
+          <p>Added</p>
+          <ul>
+            <li>The user can reposition the sideber (#222)</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated Firefox to 
+              <code>111.0</code>
+               (#227)
+            </li>
+            <li>
+              Updated uBlock to 
+              <code>1.47.4</code>
+               (#227)
+            </li>
+            <li>Update BetterFox (#227)</li>
+            <li>
+              Distroid is now 
+              <code>com.fushra.browser.alpha</code>
+               (#227)
+            </li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.60">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Forget functionality would forget all cookies (#215, Bug 1816279)</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated Firefox to 
+              <code>110.0.1</code>
+               (#219)
+            </li>
+            <li>Updated Better-Fox (#218)</li>
+            <li>Enable VA-API by default (#216)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.58">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>Updated Firefox to 110.0 (#209)</li>
+            <li>Updated UBlock to 1.47.0 (#209)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.57">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Reenable firefox sync (#208)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.56">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Fix our Better-Fox implementation</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.55">
+        <description>
+          <p>Fixed</p>
+          <ul>
+            <li>Vertical tab scrolling is less horrible</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.54">
+        <description>
+          <p>Added</p>
+          <ul>
+            <li>Vertical tab resizing (#199)</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>Welcome screeen will ask if you want to enable vertical tabs (#198)</li>
+            <li>Pulse Theme for vertical tabs has been cleaned up (#201)</li>
+          </ul>
+        </description>
+      </release>
+      <release version="1.0.0-a.53">
+        <description>
+          <p>Added</p>
+          <ul>
+            <li>Vivaldi &amp; Opera importers (#200, Upstream)</li>
+          </ul>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated Firefox to 
+              <code>109.0</code>
+               (#200)
+            </li>
+            <li>
+              Update uBlock Origin to 
+              <code>1.46.0</code>
+               (#200)
+            </li>
+          </ul>
+          <p>Fixed</p>
+          <ul>
+            <li>Vertical tabs no-longer display in fullscreen (#197, @Jacob-Tsekrekos)</li>
+            <li>Remove gap above toolbar w/ vertical tabs on Windows (#197, @Jacob-Tsekrekos)</li>
+          </ul>
+        </description>
+      </release>
+    </releases>
+</component>
