@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-    <id>com.fushra.browser</id>
+    <id>com.fushra.browser.beta</id>
 
     <name>Pulse Browser</name>
     <summary>The browser with features to meet your need</summary>
@@ -14,7 +14,7 @@
     </p>
     </description>
 
-    <launchable type="desktop-id">com.fushra.browser.desktop</launchable>
+    <launchable type="desktop-id">com.fushra.browser.beta.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <image>https://pulsebrowser.app/assets/Welcome.png</image>
@@ -26,4 +26,6 @@
             <image>https://pulsebrowser.app/assets/Sidebar_Light.png</image>
         </screenshot>
     </screenshots>
+
+    #releases
 </component>
