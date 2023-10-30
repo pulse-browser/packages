@@ -32,6 +32,17 @@
     </screenshots>
 
     <releases>
+      <release version="1.0.0-a.84">
+        <description>
+          <p>Changed</p>
+          <ul>
+            <li>
+              Updated to Firefox 
+              <code>119.0</code>
+            </li>
+          </ul>
+        </description>
+      </release>
       <release version="1.0.0-a.83">
         <description>
           <p>Changed</p>
